@@ -1,0 +1,1236 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Manrope:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+body {
+
+    font-family: Poppins, sans-serif;
+    background-color: #F7F8F9;
+}
+
+
+.button{
+    cursor: pointer;
+}
+
+h1,
+h2,
+.desc-testi p {
+    color: #333333;
+}
+
+button,
+input,
+textarea,
+select {
+    font-family: inherit;
+}
+
+/*--header--*/
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 120px;
+    height: 41px;
+    display: block;
+    object-fit: contain;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    height: auto;
+    max-height: 70px;
+}
+
+.navbar .container {
+    width: 100%;
+    max-width: 1200px;
+    min-height: 70px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    box-sizing: border-box;
+}
+
+.nav-link a {
+    font-size: 16px;
+    line-height: 100%;
+    color: #69803E;
+    text-decoration: none;
+    margin: 0 20px;
+}
+
+.nav-mobile {
+    display: none;
+}
+
+/*--hero--*/
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 650px;
+    padding-top: 100px;
+    overflow: hidden;
+}
+
+.hero {
+    background-image: url(image/bg-header-miror.jpeg);
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 24px;
+    margin: 0 auto;
+}
+
+.hero-button a {
+    width: 100%;
+    max-width: 152px;
+    text-align: center;
+    display: inline-block;
+    color: #fff;
+    border-radius: 10px;
+    text-decoration: none;
+    background-color: #415123;
+    padding: 20px;
+    margin: 10px 20px 0 0;
+}
+
+.hero-text,
+.hero-button {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-text h1 {
+    font-family: Poppins;
+    width: 530px;
+    height: 120px;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 60px;
+    font-weight: bold;
+}
+
+.hero p {
+    color: #69803E;
+    width: 476px;
+    height: 56px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+}
+
+.hero-button .button-view {
+    background: transparent;
+    border: 1px solid #415123;
+    color: #415123;
+    border-width: 1px;
+    border-radius: 10px;
+}
+
+/*-- product --*/
+.shop h2,
+.are h2,
+.why h2,
+.testimonial h2,
+.subscribe h2 {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 64px;
+    text-align: center;
+    margin: 0;
+}
+
+.shop p,
+.why p,
+.testimonial p,
+.subscribe p {
+    font-size: 14px;
+    text-align: center;
+    margin: 0 auto;
+    color: #999999;
+    margin-bottom: 30px;
+    line-height: 28px;
+}
+
+.shop h2 {
+    margin-top: 50px;
+}
+
+.shop {
+    text-align: center;
+}
+
+.product-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 0 20px;
+}
+
+.card {
+    width: 100%;
+    max-width: 380px;
+    height: 514.58px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.card img {
+    display: block;
+    justify-self: center;
+    margin-bottom: 35px;
+    max-width: 332px;
+    width: 100%;
+    height: 298.85px;
+    border-radius: 10px;
+    background: #F2F2F2;
+    object-fit: contain;
+}
+
+.card h3 {
+    margin: 0 0 5px 10px;
+    font-size: 18px;
+    text-align: left;
+}
+
+.card p {
+    margin: 0;
+    margin-left: 10px;
+    color: gray;
+    font-size: 14px;
+    text-align: left;
+}
+
+.price {
+    font-weight: 600;
+    font-size: 24px;
+    text-align: right;
+    margin: -35px 10px 20px 0;
+}
+
+
+.card button {
+    width: 100%;
+    max-width: 332.5px;
+    height: 55.42px;
+    background: #556b2f;
+    font-size: 16px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+
+.button-green:hover {
+    background: #2d3a17;
+}
+
+.button-transparent:hover {
+    background-color: #cccccc94;
+}
+
+.nav-link a:hover{
+    color: #2d3a17;
+}
+
+/*--are--*/
+
+.are {
+    text-align: center;
+    padding: 50px 0;
+    margin: 0;
+    width: 100%;
+    height: auto;
+}
+
+.are h2 {
+    margin-bottom: 10px;
+}
+
+.are-container {
+    display: flex;
+    width: 100%;
+    gap: 0;
+    margin: 0;
+}
+
+.young,
+.elderly {
+    position: relative;
+    width: 50%;
+    height: 355px;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    text-align: center;
+}
+
+.young {
+    background-image: linear-gradient(rgba(65, 81, 35, 0.55),
+            rgba(65, 81, 35, 0.55)),
+        url("image/young.jpg");
+}
+
+.elderly {
+    background-image: linear-gradient(rgba(65, 81, 35, 0.55),
+            rgba(65, 81, 35, 0.55)),
+        url("image/alder.jpg");
+}
+
+.are-container h3 {
+    font-size: 36px;
+    margin: 0;
+    color: white;
+}
+
+.young p,
+.elderly p {
+    font-size: 14px;
+}
+
+.are button {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    width: 181px;
+    height: 56px;
+    border-width: 1px;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+/*--why--*/
+
+.why {
+    text-align: center;
+    width: 100%;
+    height: auto;
+}
+
+.why-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.why-card {
+    background: white;
+    width: 380px;
+    height: auto;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 10px 32px 72px 0px rgba(51, 51, 51, 0.03);
+    border-radius: 10px;
+}
+
+.why-container .icon {
+    width: 70.8px;
+    height: 70.8px;
+    background-color: #526746;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 25px;
+
+}
+
+.why-card h3 {
+    font-size: 20px;
+    margin: 30px 0 10px;
+}
+
+.why-card p {
+    color: #999;
+    font-size: 14px;
+    line-height: 28px;
+    margin: 0;
+}
+
+/*--testimonial--*/
+.testimonial {
+    text-align: center;
+    padding: 40px 0;
+    margin-bottom: 60px;
+    width: 100%;
+    height: auto;
+}
+
+.desc-testi {
+    padding: 30px 20px;
+    margin: 0 auto;
+    width: 780px;
+    max-width: 90%;
+    min-height: 243px;
+    background: #FFFFFF;
+    box-shadow: 10px 32px 72px 0px rgba(51, 51, 51, 0.03);
+    border-radius: 10px;
+}
+
+.stars {
+    padding-bottom: 10px;
+}
+
+.desc-testi .stars {
+    font-size: 25px;
+}
+
+.desc-testi>p {
+    width: 551px;
+    max-width: 90%;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 28px;
+    text-align: center;
+    color: #333333;
+
+}
+
+.profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 30px;
+}
+
+.profile-info p {
+    margin: 0;
+    line-height: 15px;
+    text-align: left;
+}
+
+.profile-info .name {
+    font-size: 12px;
+    color: #333333;
+}
+
+.profile-info .location {
+    font-size: 10px;
+    color: #999999;
+}
+
+
+.profile-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #ccc;
+}
+
+/*--subscribe--*/
+.subscribe {
+    background-image: linear-gradient(rgba(65, 81, 35, 0.86),
+            rgba(65, 81, 35, 0.86)),
+        url("image/subscribe.jpg");
+
+    position: relative;
+    width: 100%;
+    height: 332px;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    box-sizing: border-box;
+    padding-bottom: 45px;
+}
+
+.subscribe h2 {
+    padding-top: 35px;
+}
+
+.subscribe p {
+    margin-bottom: 20px;
+}
+
+.subscribe h2,
+.subscribe p,
+.submit-subscribe {
+    color: #FFFFFF;
+}
+
+.send-subscribe {
+
+    position: relative;
+    width: 600px;
+}
+
+#email,
+.submit-subscribe {
+    border: none;
+    position: relative;
+}
+
+#email {
+    width: 100%;
+    height: 73px;
+    font-size: 14px;
+    border-radius: 8px;
+    border: none;
+    box-sizing: border-box;
+    padding: 0 160px 0 15px;
+}
+
+.submit-subscribe {
+    width: 144px;
+    height: 46px;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    font-size: 16px;
+    transform: translateY(-50%);
+    justify-content: center;
+    border-radius: 10px;
+    background-color: #415123;
+}
+
+/*--footer--*/
+footer {
+    background-color: #415123;
+    width: 100%;
+    padding: 50px 80px 25px;
+    color: white;
+}
+
+.footer-content {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: left;
+    justify-content: space-between;
+    letter-spacing: normal;
+    padding-bottom: 20px;
+}
+
+.footer-top img {
+    width: 84px;
+    height: 29px;
+    margin: 20px 20px 0 0;
+}
+
+.desc-footer {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 28px;
+    letter-spacing: 0%;
+    width: 292px;
+}
+
+.information h3,
+.help-center h3 {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+
+.information h3,
+.help-center h3,
+.footer-bottom {
+    color: #CBD8B4;
+}
+
+.information a,
+.help-center p,
+.desc-footer,
+.footer-box p {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.information p,
+.help-center p {
+    padding-top: 20px;
+    font-size: 14px;
+}
+
+.footer-box {
+    margin: 35px 65px 0 30px;
+}
+
+.call-email {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.contact-item img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    margin: 0;
+}
+
+.contact-item p {
+    margin: 0;
+    font-size: 14px;
+    color: #FFFFFF;
+}
+
+.social-media {
+    display: flex;
+    justify-content: left;
+    gap: 22px;
+    margin-top: 20px;
+}
+
+.social-media a {
+    width: 27px;
+    height: 27px;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    margin: 0;
+    font-size: 11px;
+    line-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #415123;
+}
+
+.social-media img {
+    text-align: center;
+    font-size: 11px;
+}
+
+.social-media a:hover {
+    transform: scale(1.1);
+}
+
+.footer-bottom {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    text-align: center;
+    padding-top: 15px;
+    font-weight: 400;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.footer-bottom p:hover {
+    color: blue;
+}
+
+hr {
+    width: 100%;
+    align-items: center;
+    border-width: 1px;
+    border-color: #69803E;
+}
+
+
+@media (max-width: 600px) {
+
+    * {
+        box-sizing: border-box;
+    }
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .shop h2,
+    .are h2,
+    .why h2,
+    .testimonial h2,
+    .subscribe h2 {
+        font-size: 28px;
+        line-height: 36px;
+        margin: 0 auto;
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    .shop p,
+    .why p,
+    .testimonial p,
+    .subscribe p {
+        width: 100%;
+        font-size: 12px;
+        line-height: 22px;
+        margin-bottom: 25px;
+        text-align: center;
+        padding: 0 60px 0;
+    }
+
+    /*---- header ----*/
+
+    .nav-mobile {
+        display: block;
+    }
+
+    .hamburger {
+        display: block;
+        border: none;
+        background: transparent;
+        color: #415123;
+        font-size: 18px;
+        cursor: pointer;
+        padding: 0;
+    }
+
+    .navbar {
+        height: 55px;
+        padding: 0 20px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #fff;
+        z-index: 20;
+    }
+
+    .nav-link {
+        display: none;
+    }
+
+    #nav-menu {
+        display: none;
+    }
+
+    .navbar #nav-menu.active {
+        display: flex;
+        flex-direction: column;
+
+        position: absolute;
+        right: 0;
+
+        width: 264px;
+        height: 582.82px;
+
+
+        padding: 15px 20px;
+        margin: 0;
+
+        background-color: #fff;
+        z-index: 30;
+    }
+
+    .navbar #nav-menu.active a {
+        display: block;
+        color: #415123;
+        text-decoration: none;
+        font-size: 12px;
+        margin-bottom: 16px;
+    }
+
+    .logo img {
+        width: 75px;
+        height: auto;
+        margin-left: 0;
+    }
+
+
+    /*---- hero ----*/
+
+    .hero {
+        width: 100%;
+        text-align: center;
+        margin: 0 auto;
+        padding-bottom: 30px;
+    }
+
+    .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: url(image/bg.jpg);
+        width: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        transform: scaleX(-1);
+        z-index: 0;
+    }
+
+    .hero-text {
+        margin-top: -50px;
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 28px;
+        line-height: 40px;
+    }
+
+    .hero-text p {
+        font-size: 13px;
+        line-height: 22px;
+    }
+
+    .hero-text h1,
+    .hero p {
+
+        height: auto;
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+        margin-top: 20px;
+    }
+
+    .hero-button a {
+        box-sizing: border-box;
+        width: 111px;
+        height: 38px;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 11px;
+        line-height: normal;
+        text-align: center;
+        border-radius: 10px;
+    }
+
+
+    /*---- shop ----*/
+
+    .shop {
+        text-align: center;
+    }
+
+
+    .shop h2 {
+        margin-top: 40px;
+    }
+
+    .product-container {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+        padding: 0 50px;
+    }
+
+    .card {
+        width: 100%;
+        height: auto;
+        max-width: 330px;
+        padding: 15px;
+    }
+
+    .card img {
+        width: 100%;
+        height: auto;
+        margin-top: 0;
+    }
+
+    .card h3,
+    .price {
+        font-size: 14px;
+        margin: 0;
+    }
+
+    .card p {
+        font-size: 12px;
+        text-align: left;
+        padding: 0;
+        margin: 5px 0 25px;
+    }
+
+    .price {
+        margin-top: -50px;
+        margin-bottom: 20px;
+    }
+
+    .card button {
+        text-align: center;
+        font-size: 11px;
+        width: 100%;
+        height: 34px;
+    }
+
+    /*---- are ----*/
+
+    .are-container {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .young,
+    .elderly {
+        width: 100%;
+        height: 300px;
+        line-height: 15px;
+    }
+
+    .are-container h3 {
+        font-size: 20px;
+    }
+
+    .are-container p {
+        width: 239px;
+        font-size: 11px;
+    }
+
+    .are-container button {
+        width: 117px;
+        height: 25px;
+        font-size: 11px;
+    }
+
+    /*---- why ----*/
+
+    .why {
+        text-align: center;
+        margin: 0;
+    }
+
+    .why-container {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 0 20px;
+    }
+
+    .why-card {
+        width: 100%;
+        max-width: 330px;
+        height: auto;
+        min-height: 220px;
+        padding: 30px 0 10px;
+        margin: 0 auto;
+    }
+
+
+    .why-card h3 {
+        font-size: 18px;
+    }
+
+    .why h2 {
+        width: 100%;
+        max-width: 325px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /*---- testi ----*/
+
+    .testimonial {
+
+        text-align: center;
+        margin: 0;
+    }
+
+    .desc-testi {
+        width: 100%;
+        height: auto;
+        min-height: 280px;
+        padding: 30px;
+    }
+
+    .stars {
+        padding-top: 13px;
+    }
+
+    .desc-testi .stars img {
+        width: 73px;
+        height: 10.53px;
+    }
+
+    .desc-testi>p {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 12px;
+        line-height: 1.8;
+        text-align: center;
+        padding: 15px 10px 0;
+    }
+
+    .profile {
+        margin: 0;
+        padding-top: 20px;
+    }
+
+    .profile p {
+        font-size: 10px;
+        margin: -8px 0;
+        padding: 0;
+    }
+
+    /*---------------------------------------------------*/
+    .card-container {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .card1,
+    .card2,
+    .card3 {
+        width: 100%;
+        max-width: 380px;
+    }
+
+    .card3 {
+        grid-column: auto;
+    }
+
+
+    /*---- subscribe ----*/
+
+    .subscribe {
+        padding-bottom: 10px;
+        background-position: 85% 15%;
+    }
+
+    .send-subscribe {
+        width: calc(100% - 30px);
+        max-width: 335px;
+    }
+
+    #email {
+        height: 40px;
+        padding: 0 95px 0 12px;
+    }
+
+    #email,
+    .submit-subscribe {
+        font-size: 9px;
+    }
+
+    .submit-subscribe {
+        width: 78px;
+        height: 25px;
+        right: 10px;
+        border-radius: 9px;
+    }
+
+    /*---- footer ----*/
+
+    footer {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 35px 20px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+        height: auto;
+        overflow: hidden;
+    }
+
+    .footer-top {
+        width: 100%;
+        text-align: center;
+        margin: 0;
+    }
+
+    .footer-top img {
+        width: 84px;
+        height: 29px;
+        margin: 0;
+    }
+
+    .desc-footer {
+        width: 100%;
+        max-width: 292px;
+        margin: 10px auto 0;
+        text-align: center;
+        padding: 0;
+    }
+
+    .information,
+    .help-center {
+        width: 100%;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .information h3,
+    .help-center h3 {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .information p,
+    .help-center p {
+        padding: 8px;
+        margin: 0;
+    }
+
+    .footer-box {
+        width: 100%;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-item {
+        justify-content: center;
+    }
+
+    .contact-item img {
+        width: 16px;
+        height: 16px;
+    }
+
+    .social-media,
+    .contact-item {
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .social-media {
+        margin-top: 15px;
+    }
+
+    .call-email {
+        gap: 5px;
+    }
+
+    .desc-footer,
+    .information p,
+    .help-center p,
+    .call-email p,
+    .contact-item {
+        font-size: 12px;
+    }
+
+    .footer-bottom {
+        width: 100%;
+        margin: 0;
+        text-align: center;
+    }
+
+    .footer-bottom p {
+        padding-top: 10px;
+        font-size: 11px;
+    }
+    
+
+
+}
+
+@media (max-width: 900px) and (min-width: 600px) {
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+    }
+
+    .card3 {
+        grid-column: 1 / -1;
+        justify-self: center;
+    }
+
+    /*-----------------*/
+
+    .product-container {
+        display: grid;
+        gap: 25px;
+        padding: 0 30px;
+    }
+
+    .card:last-child{
+        grid-column: 1 / 3;
+        justify-self: center;
+        width: 100%;
+        max-width: 380px;
+    }
+
+    .card img {
+        margin-bottom: 50px;
+    }
+
+    .card h3,
+    .card p {
+        margin: 0;
+    }
+
+    .young p,
+    .elderly p {
+        padding: 20px;
+        margin: 0;
+    }
+
+    .footer-box {
+        margin: 0;
+    }
+
+    /*-----------------------------------------------------------------------------------*/
+
+    .why-container {
+        display: grid;
+        gap: 25px;
+        padding: 0 40px;
+        
+    }
+
+    .why-card:last-child {
+        grid-column: 1 / 3;
+        justify-self: center;
+        width: 100%;
+        max-width: 380px;
+    }
+
+}
