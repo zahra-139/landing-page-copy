@@ -1,98 +1,7 @@
 <?php
 
-$siteName = "Clarity";
-$heroTitle = "Harvesting Goodness from Olive Oil";
-$heroDescription = "Enjoy a healthy life by eating Clarity Supplement that make your life healthier for today and forever";
-$menu = [
-    [
-        "label" => "ABOUT",
-        "url" => "#"
-    ],
-    [
-        "label" => "PRODUCTS",
-        "url" => "#PRODUCTS"
-    ],
-    [
-        "label" => "CONTACT",
-        "url" => "#CONTACT"
-    ]
-];
-$shop = [
-    "title" => "Shop Clarity",
-    "description" => "We offer supplement for you with very good quality for health"
-];
-
-$product = [
-    [
-        "name" => "Super Antioxidant",
-        "description" => "60 capsules",
-        "price" => "$16,00",
-        "image" => "image/supplement.png"
-    ],
-    [
-        "name" => "Super Antioxidant",
-        "description" => "60 capsules",
-        "price" => "$16,00",
-        "image" => "image/supplement.png"
-    ],
-    [
-        "name" => "Super Antioxidant",
-        "description" => "60 capsules",
-        "price" => "$16,00",
-        "image" => "image/supplement.png"
-    ]
-];
-$are = "Are You..";
-$categories = [
-    [
-        "class" => "young",
-        "title" => "Young Active People",
-        "description" => "We offer supplement that can give you more energy boost"
-    ],
-    [
-        "class" => "elderly",
-        "title" => "Elderly",
-        "description" => "We offer supplement to keep your body fit and healthy aging"
-    ]
-];
-$why = [
-    "title" => "Why Choose Our Product",
-    "description" => "Clarity was created with the mission to improve your health and wellbeing with the purest olive products on earth."
-];
-$whyProducts = [
-    [
-        "image" => "image/37.png",
-        "title" => "Perfect Quality",
-        "description" => "We grow, farm, and bottle the finest olive products you can find."
-    ],
-    [
-        "image" => "image/$.png",
-        "title" => "Best Price Offers",
-        "description" => "The price is very affordable among similar product."
-    ],
-    [
-        "image" => "image/14.png",
-        "title" => "100% Natural",
-        "description" => "Harvested from the finest olive trees that deliver health benefits."
-    ]
-];
-$testimonial = [
-    "title" => "Testimonials",
-    "description" => "Clarity was created with the mission to improve your health and wellbeing with the purest olive products on earth."
-];
-$testimoni = [
-    "name" => "Richard Johnson",
-    "location" => "Bandung, Indonesia",
-    "description" => "I love Super Antioxidant for the polyphenols and antioxidants.
-                It's hard to find a good and pure Olive Oil Supplement
-                I'm on my second bottle now and I feel great!"
-];
-$subscribe = [
-    "title" => "subscribe To Our Newsletter",
-    "description" => "Sign up for our newsletter for information, offers and more."
-];
-$phone = "0361 123 4567";
-$email = "info.clarity@gmail.com";
+require_once "database.php";
+require_once "data.php";
 
 ?>
 
@@ -239,30 +148,23 @@ $email = "info.clarity@gmail.com";
             <?php if (!empty($why["title"])): ?>
                 <h2><?php echo $why["title"]; ?></h2>
             <?php endif; ?>
-
             <?php if (!empty($why["description"])): ?>
                 <p><?php echo $why["description"]; ?></p>
             <?php endif; ?>
 
             <div class="why-container container">
-
                 <?php if (!empty($whyProducts)): ?>
-
                     <?php foreach ($whyProducts as $item): ?>
                         <div class="why-card">
-
                             <div class="icon">
                                 <img src="<?php echo $item["image"]; ?>" alt="icon">
                             </div>
-
                             <?php if (!empty($item["title"])): ?>
                                 <h3><?php echo $item["title"]; ?></h3>
                             <?php endif; ?>
-
                             <?php if (!empty($item["description"])): ?>
                                 <p><?php echo $item["description"]; ?></p>
                             <?php endif; ?>
-
                         </div>
                     <?php endforeach; ?>
                 <?php else: ?>
