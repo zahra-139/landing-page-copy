@@ -1,7 +1,26 @@
 <?php
 
-require_once "database.php";
-require_once "data.php";
+require_once "config.php";
+require_once "connection.php";
+
+
+$result_config = mysqli_query($conn, "SELECT * FROM config");
+$config = mysqli_fetch_all($result_config, MYSQLI_ASSOC);
+
+$result_menus = mysqli_query($conn, "SELECT * FROM menus");
+$menus = mysqli_fetch_all($result_menus, MYSQLI_ASSOC);
+
+$result_products = mysqli_query($conn, "SELECT * FROM products");
+$products = mysqli_fetch_all($result_products, MYSQLI_ASSOC);
+
+$result_are = mysqli_query($conn, "SELECT * FROM are");
+$are = mysqli_fetch_all($result_are, MYSQLI_ASSOC);
+
+$result_why = mysqli_query($conn, "SELECT * FROM why");
+$why = mysqli_fetch_all($result_why, MYSQLI_ASSOC);
+
+$result_testimonial = mysqli_query($conn, "SELECT * FROM testimonial");
+$testimonial = mysqli_fetch_all($result_testimonial, MYSQLI_ASSOC);
 
 ?>
 
@@ -28,8 +47,8 @@ require_once "data.php";
 
             <!-- Desktop Menu -->
             <div class="nav-link">
-                <?php if (!empty($menu)): ?>
-                    <?php foreach ($menu as $item): ?>
+                <?php if (!empty($menus)): ?>
+                    <?php foreach ($menus as $item): ?>
                         <a href="<?php echo $item["url"]; ?>">
                             <?php echo $item["label"]; ?>
                         </a>
@@ -91,8 +110,8 @@ require_once "data.php";
             <?php endif; ?>
 
             <div class="product-container container">
-                <?php if (!empty($product)): ?>
-                    <?php foreach ($product as $item): ?>
+                <?php if (!empty($products)): ?>
+                    <?php foreach ($products as $item): ?>
                         <div class="card">
                             <img src="<?php echo $item["image"]; ?>" alt="<?php echo $item["name"]; ?>">
                             <h3><?php echo $item["name"]; ?></h3>
@@ -116,13 +135,13 @@ require_once "data.php";
 
     <div class="are">
         <?php if (!empty($are)): ?>
-            <h2><?php echo $are; ?></h2>
+            <h2><?php echo $areTitle; ?></h2>
         <?php endif; ?>
 
         <div class="are-container">
-            <?php if (!empty($categories)): ?>
+            <?php if (!empty($are)): ?>
 
-                <?php foreach ($categories as $category): ?>
+                <?php foreach ($are as $category): ?>
                     <div class="<?php echo $category["class"]; ?>">
 
                         <?php if (!empty($category["title"])): ?>
@@ -145,16 +164,16 @@ require_once "data.php";
 
     <section>
         <div class="why">
-            <?php if (!empty($why["title"])): ?>
-                <h2><?php echo $why["title"]; ?></h2>
+            <?php if (!empty($whyTitle["title"])): ?>
+                <h2><?php echo $whyTitle["title"]; ?></h2>
             <?php endif; ?>
-            <?php if (!empty($why["description"])): ?>
-                <p><?php echo $why["description"]; ?></p>
+            <?php if (!empty($whyTitle["description"])): ?>
+                <p><?php echo $whyTitle["description"]; ?></p>
             <?php endif; ?>
 
             <div class="why-container container">
-                <?php if (!empty($whyProducts)): ?>
-                    <?php foreach ($whyProducts as $item): ?>
+                <?php if (!empty($why)): ?>
+                    <?php foreach ($why as $item): ?>
                         <div class="why-card">
                             <div class="icon">
                                 <img src="<?php echo $item["image"]; ?>" alt="icon">
@@ -176,12 +195,12 @@ require_once "data.php";
 
     <div class="testimonial">
 
-        <?php if (!empty($testimonial["title"])): ?>
-            <h2><?php echo $testimonial["title"]; ?></h2>
+        <?php if (!empty($testimonials["title"])): ?>
+            <h2><?php echo $testimonials["title"]; ?></h2>
         <?php endif; ?>
 
-        <?php if (!empty($testimonial["description"])): ?>
-            <p><?php echo $testimonial["description"] ?></p>
+        <?php if (!empty($testimonials["description"])): ?>
+            <p><?php echo $testimonials["description"] ?></p>
         <?php endif; ?>
 
         <div class="desc-testi">
