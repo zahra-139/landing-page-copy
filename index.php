@@ -1,26 +1,74 @@
 <?php
 
-require_once "config.php";
 require_once "connection.php";
 
-
 $result_config = mysqli_query($conn, "SELECT * FROM config");
-$config = mysqli_fetch_all($result_config, MYSQLI_ASSOC);
+$config = [];
+while ($row = mysqli_fetch_assoc($result_config)) {
+    $config[$row["data_key"]] = $row["value"];
+}
+
+$siteName = $config["siteName"] ?? "";
+$heroTitle =  $config["heroTitle"] ?? "";
+$heroDescription =  $config["heroDescription"] ?? "";
+
+$shopTitle =  $config["shopTitle"] ?? "";
+$shopDescription =  $config["shopDescription"] ?? "";
+
+$areTitle =  $config["areTitle"] ?? "";
+
+$whyTitle =  $config["whyTitle"] ?? "";
+$whyDescription =  $config["whyDescription"] ?? "";
+
+$testimonialTitle =  $config["testimonialTitle"] ?? "";
+$testimonialDescription =  $config["testimonialDescription"] ?? "";
+
+$testimoniDescription =  $config["testimoniDescription"] ?? "";
+$testimoniName =  $config["testimoniName"] ?? "";
+$testimoniLocation =  $config["testimoniLocation"] ?? "";
+
+$subscribeTitle =  $config["subscribeTitle"] ?? "";
+$subscribeDescription =  $config["subscribeDescription"] ?? "";
+
+$descFooter = $config["descFooter"] ?? "";
+$phone =  $config["phone"] ?? "";
+$email =  $config["email"] ?? "";
 
 $result_menus = mysqli_query($conn, "SELECT * FROM menus");
+if (!$result_menus) {
+    die(mysqli_error($conn));
+}
 $menus = mysqli_fetch_all($result_menus, MYSQLI_ASSOC);
 
 $result_products = mysqli_query($conn, "SELECT * FROM products");
+if (!$result_products) {
+    die(mysqli_error($conn));
+}
 $products = mysqli_fetch_all($result_products, MYSQLI_ASSOC);
 
 $result_are = mysqli_query($conn, "SELECT * FROM are");
+if (!$result_are) {
+    die(mysqli_error($conn));
+}
 $are = mysqli_fetch_all($result_are, MYSQLI_ASSOC);
 
 $result_why = mysqli_query($conn, "SELECT * FROM why");
+if (!$result_why) {
+    die(mysqli_error($conn));
+}
 $why = mysqli_fetch_all($result_why, MYSQLI_ASSOC);
 
-$result_testimonial = mysqli_query($conn, "SELECT * FROM testimonial");
-$testimonial = mysqli_fetch_all($result_testimonial, MYSQLI_ASSOC);
+$result_informations = mysqli_query($conn, "SELECT * FROM informations");
+if (!$result_informations) {
+    die(mysqli_error($conn));
+}
+$informations = mysqli_fetch_all($result_informations, MYSQLI_ASSOC);
+
+$result_helpcenter = mysqli_query($conn, "SELECT * FROM helpcenter");
+if (!$result_helpcenter) {
+    die(mysqli_error($conn));
+}
+$helpcenter = mysqli_fetch_all($result_helpcenter, MYSQLI_ASSOC);
 
 ?>
 
@@ -65,8 +113,8 @@ $testimonial = mysqli_fetch_all($result_testimonial, MYSQLI_ASSOC);
                 </button>
 
                 <div class="nav-menu" id="nav-menu">
-                    <?php if (!empty($menu)): ?>
-                        <?php foreach ($menu as $item): ?>
+                    <?php if (!empty($menus)): ?>
+                        <?php foreach ($menus as $item): ?>
                             <a href="<?php echo $item["url"]; ?>">
                                 <?php echo $item["label"]; ?>
                             </a>
@@ -101,12 +149,12 @@ $testimonial = mysqli_fetch_all($result_testimonial, MYSQLI_ASSOC);
 
     <section>
         <div class="shop" id="PRODUCTS">
-            <?php if (!empty($shop["title"])): ?>
-                <h2><?php echo $shop["title"]; ?></h2>
+            <?php if (!empty($shopTitle)): ?>
+                <h2><?php echo $shopTitle; ?></h2>
             <?php endif; ?>
 
-            <?php if (!empty($shop["description"])): ?>
-                <p><?php echo $shop["description"]; ?></p>
+            <?php if (!empty($shopDescription)): ?>
+                <p><?php echo $shopDescription; ?></p>
             <?php endif; ?>
 
             <div class="product-container container">
@@ -134,7 +182,7 @@ $testimonial = mysqli_fetch_all($result_testimonial, MYSQLI_ASSOC);
     </section>
 
     <div class="are">
-        <?php if (!empty($are)): ?>
+        <?php if (!empty($areTitle)): ?>
             <h2><?php echo $areTitle; ?></h2>
         <?php endif; ?>
 
@@ -164,11 +212,11 @@ $testimonial = mysqli_fetch_all($result_testimonial, MYSQLI_ASSOC);
 
     <section>
         <div class="why">
-            <?php if (!empty($whyTitle["title"])): ?>
-                <h2><?php echo $whyTitle["title"]; ?></h2>
+            <?php if (!empty($whyTitle)): ?>
+                <h2><?php echo $whyTitle; ?></h2>
             <?php endif; ?>
-            <?php if (!empty($whyTitle["description"])): ?>
-                <p><?php echo $whyTitle["description"]; ?></p>
+            <?php if (!empty($whyDescription)): ?>
+                <p><?php echo $whyDescription; ?></p>
             <?php endif; ?>
 
             <div class="why-container container">
@@ -195,12 +243,12 @@ $testimonial = mysqli_fetch_all($result_testimonial, MYSQLI_ASSOC);
 
     <div class="testimonial">
 
-        <?php if (!empty($testimonials["title"])): ?>
-            <h2><?php echo $testimonials["title"]; ?></h2>
+        <?php if (!empty($testimonialTitle)): ?>
+            <h2><?php echo $testimonialTitle; ?></h2>
         <?php endif; ?>
 
-        <?php if (!empty($testimonials["description"])): ?>
-            <p><?php echo $testimonials["description"] ?></p>
+        <?php if (!empty($testimonialDescription)): ?>
+            <p><?php echo $testimonialDescription; ?></p>
         <?php endif; ?>
 
         <div class="desc-testi">
@@ -209,41 +257,37 @@ $testimonial = mysqli_fetch_all($result_testimonial, MYSQLI_ASSOC);
                 <img src="image/Group 1685.png" alt="stars">
             </div>
 
-            <?php if (!empty($testimoni)): ?>
 
-                <?php if (!empty($testimoni["description"])): ?>
-                    <p><?php echo $testimoni["description"] ?></p>
-                <?php endif; ?>
-
-                <div class="profile">
-                    <div class="profile-img"></div>
-
-                    <div class="profile-info">
-
-                        <?php if (!empty($testimoni["name"])): ?>
-                            <p class="name"><?php echo $testimoni["name"]; ?></p>
-                        <?php endif; ?>
-
-                        <?php if (!empty($testimoni["location"])): ?>
-                            <p class="location"><?php echo $testimoni["location"]; ?></p>
-                        <?php endif; ?>
-
-                    </div>
-                </div>
-            <?php else: ?>
-                <p>testimoni are not available.</p>
+            <?php if (!empty($testimoniDescription)): ?>
+                <p><?php echo $testimoniDescription; ?></p>
             <?php endif; ?>
+
+            <div class="profile">
+                <div class="profile-img"></div>
+
+                <div class="profile-info">
+
+                    <?php if (!empty($testimoniName)): ?>
+                        <p class="name"><?php echo $testimoniName; ?></p>
+                    <?php endif; ?>
+
+                    <?php if (!empty($testimoniLocation)): ?>
+                        <p class="location"><?php echo $testimoniLocation; ?></p>
+                    <?php endif; ?>
+
+                </div>
+            </div>
         </div>
     </div>
 
     <div class="subscribe">
 
-        <?php if (!empty($subscribe["title"])): ?>
-            <h2><?php echo $subscribe["title"] ?></h2>
+        <?php if (!empty($subscribeTitle)): ?>
+            <h2><?php echo $subscribeTitle; ?></h2>
         <?php endif; ?>
 
-        <?php if (!empty($subscribe["description"])): ?>
-            <p><?php echo $subscribe["description"] ?></p>
+        <?php if (!empty($subscribeDescription)): ?>
+            <p><?php echo $subscribeDescription; ?></p>
         <?php endif; ?>
 
         <div class="send-subscribe">
@@ -258,26 +302,37 @@ $testimonial = mysqli_fetch_all($result_testimonial, MYSQLI_ASSOC);
             <div class="footer-content container">
                 <div class="footer-top">
                     <img src="image/logo-footer.png" alt="footer-logo">
-                    <p class="desc-footer">
-                        Clarity is in the business of improving
-                        your health and wellness. We grow, farm,
-                        and bottle the finest olive products you
-                        can find.
-                    </p>
+                    <?php if (!empty($descFooter)): ?>
+                        <p class="desc-footer"><?php echo $descFooter; ?></p>
+                    <?php endif; ?>
                 </div>
 
                 <div class="information">
                     <h3>Information</h3>
-                    <p><a href="#about_us">about us</a></p>
-                    <p><a href="#Our_Product">Our Product</a></p>
-                    <p><a href="#Contact_Us">Contact Us</a></p>
+
+                    <?php foreach ($informations as $item): ?>
+                        <?php if ($item["category"] == "Information"): ?>
+                            <p>
+                                <a href="<?php echo $item["url"]; ?>">
+                                    <?php echo $item["label"]; ?>
+                                </a>
+                            </p>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
                 </div>
 
                 <div class="help-center">
                     <h3>Help Center</h3>
-                    <p>Privacy Policy</p>
-                    <p>Terms & Conditions</p>
-                    <p>Legal Support</p>
+
+                    <?php foreach ($helpcenter as $item): ?>
+                        <?php if ($item["category"] == "Help Center"): ?>
+                            <p>
+                                <a href="<?php echo $item["url"]; ?>">
+                                    <?php echo $item["label"]; ?>
+                                </a>
+                            </p>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
                 </div>
 
                 <div class="footer-box">
@@ -300,7 +355,7 @@ $testimonial = mysqli_fetch_all($result_testimonial, MYSQLI_ASSOC);
                         <a><img src="image/ig.png" alt="ig"></a>
                         <a><img src="image/twiter.png" alt="twiter"></a>
                         <a><img src="image/fb.png" alt="fb"></a>
-                    </div>  
+                    </div>
                 </div>
             </div>
 
